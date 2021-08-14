@@ -7,8 +7,10 @@ when the product is on sale, customer will go to buy it.
 */
 
 #include <iostream>
-#include "visitor.hpp"
-using namespace  std;
+#include "Publisher.hpp"
+#include "Subscriber.hpp"
+#include "Customer.hpp"
+#include "Saler.hpp"
 
 int main()
 {
@@ -20,16 +22,16 @@ int main()
     saler->addSubscriber(B);
     saler->setMsg("not on sale");
     saler->notifySubscriber();
-    cout << endl;
+    std::cout << std::endl;
 
     saler->setMsg("on sale");
     saler->notifySubscriber();
-    cout << endl;
+    std::cout << std::endl;
 
     saler->removeSubscriber(B);
     saler->setMsg("on sale");
     saler->notifySubscriber();
-    cout << endl;
+    std::cout << std::endl;
 
     delete saler;
     delete A;
